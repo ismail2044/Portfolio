@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV  Ismail Salmi </title>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Added CSS variables for light and dark themes */
+:root {
+  --primary-dark: #0f172a;
+  --primary-darker: #1e293b;
+  --primary-light: #1e293b;
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --accent-purple: #a855f7;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-color: rgba(71, 85, 105, 0.3);
+  --card-bg: rgba(30, 41, 59, 0.3);
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+/* Added light theme variables */
+html.light-theme {
+  --primary-dark: #ffffff;
+  --primary-darker: #f8fafc;
+  --primary-light: #f1f5f9;
+  --accent-cyan: #0891b2;
+  --accent-blue: #2563eb;
+  --accent-purple: #9333ea;
+  --text-light: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(148, 163, 184, 0.3);
+  --card-bg: rgba(241, 245, 249, 0.5);
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Improved responsive padding for mobile */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Updated header with theme toggle */
+.header {
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+html.light-theme .header {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive header title for mobile */
+@media (max-width: 640px) {
+  .header-title {
+    font-size: 18px;
+  }
+}
+
+/* Added theme toggle button styles */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: var(--accent-cyan);
+}
+
+.theme-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(20deg);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* Hide navigation on mobile and tablet, show on desktop */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .header-right {
+    gap: 16px;
+  }
+}
+
+/* Main Content */
+.main {
+  padding: 64px 0;
+}
+
+/* Responsive main padding for mobile */
+@media (max-width: 768px) {
+  .main {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 24px 0;
+  }
+}
+
+/* Added fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+
+/* Responsive hero layout for tablet and mobile */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.hero-content {
+  animation-delay: 0s;
+}
+
+.profile-photo-container {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-cyan);
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive profile photo size for mobile */
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.5);
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Responsive hero title for tablet and mobile */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.hero-description {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+/* Responsive hero description for mobile */
+@media (max-width: 768px) {
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-description {
+    font-size: 14px;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 14px;
+  border: 1px solid;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive badge size for mobile */
+@media (max-width: 640px) {
+  .badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+.badge:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.badge:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.badge:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.badge-cyan {
+  background: rgba(6, 182, 212, 0.2);
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.badge-blue {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.badge-purple {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Contact Card */
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  height: fit-content;
+  transition: all 0.3s ease;
+}
+
+/* Responsive contact card for mobile */
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 16px;
+  }
+}
+
+.contact-card:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+}
+
+.contact-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+/* Responsive contact card title for mobile */
+@media (max-width: 640px) {
+  .contact-card-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  animation: slideInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.contact-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.contact-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.contact-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.contact-icon {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+/* Responsive contact icon for mobile */
+@media (max-width: 640px) {
+  .contact-icon {
+    font-size: 18px;
+  }
+}
+
+.contact-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-link {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+
+.contact-link:hover {
+  color: var(--accent-cyan);
+}
+
+.contact-text {
+  color: var(--text-light);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive contact buttons for mobile */
+@media (max-width: 640px) {
+  .contact-buttons {
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+}
+
+.btn-small {
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+/* Responsive small button for mobile */
+@media (max-width: 640px) {
+  .btn-small {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Sections */
+.section {
+  margin-bottom: 32px;
+}
+
+/* Responsive section margin for mobile */
+@media (max-width: 640px) {
+  .section {
+    margin-bottom: 20px;
+  }
+}
+
+/* Accordion */
+.accordion-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  border-color: var(--accent-cyan);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Responsive accordion header for mobile */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .accordion-header {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+.accordion-header:hover {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent-cyan);
+}
+
+.accordion-title {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.accordion-icon {
+  font-size: 24px;
+  color: var(--accent-cyan);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive accordion icon for mobile */
+@media (max-width: 640px) {
+  .accordion-icon {
+    font-size: 20px;
+  }
+}
+
+.accordion-header.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0 24px;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  padding: 0 24px 24px 24px;
+  opacity: 1;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Responsive accordion content for mobile */
+@media (max-width: 768px) {
+  .accordion-content {
+    padding: 0 16px;
+  }
+
+  .accordion-content.active {
+    padding: 0 16px 16px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .accordion-content {
+    padding: 0 14px;
+  }
+
+  .accordion-content.active {
+    padding: 0 14px 14px 14px;
+  }
+}
+
+/* Experience */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Responsive experience list gap for mobile */
+@media (max-width: 640px) {
+  .experience-list {
+    gap: 16px;
+  }
+}
+
+.experience-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Responsive experience card padding for mobile */
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-card {
+    padding: 12px;
+  }
+}
+
+.experience-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.experience-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.experience-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.experience-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+html.light-theme .experience-card {
+  background: rgba(241, 245, 249, 0.5);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.experience-card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* Responsive experience header for mobile */
+@media (max-width: 640px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+}
+
+.experience-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #06b6d4;
+  margin-bottom: 4px;
+}
+
+/* Responsive experience title for mobile */
+@media (max-width: 768px) {
+  .experience-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-title {
+    font-size: 14px;
+  }
+}
+
+.experience-company {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Responsive experience company for mobile */
+@media (max-width: 640px) {
+  .experience-company {
+    font-size: 12px;
+  }
+}
+
+.experience-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(30, 41, 59, 0.5);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Responsive experience date for mobile */
+@media (max-width: 640px) {
+  .experience-date {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+html.light-theme .experience-date {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.experience-list-items {
+  list-style: none;
+}
+
+.experience-list-items li {
+  color: var(--text-light);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* Responsive experience list items for mobile */
+@media (max-width: 768px) {
+  .experience-list-items li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-list-items li {
+    font-size: 13px;
+    margin-bottom: 6px;
+    padding-left: 16px;
+  }
+}
+
+.experience-list-items li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+}
+
+/* Education */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Responsive education list gap for mobile */
+@media (max-width: 640px) {
+  .education-list {
+    gap: 12px;
+  }
+}
+
+.education-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive education card padding for mobile */
+@media (max-width: 768px) {
+  .education-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-card {
+    padding: 12px;
+  }
+}
+
+.education-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.education-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+html.light-theme .education-card {
+  background: rgba(241, 245, 249, 0.5);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.education-card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* Responsive education header for mobile */
+@media (max-width: 640px) {
+  .education-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.education-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #06b6d4;
+}
+
+/* Responsive education title for mobile */
+@media (max-width: 768px) {
+  .education-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-title {
+    font-size: 14px;
+  }
+}
+
+.education-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(30, 41, 59, 0.5);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Responsive education date for mobile */
+@media (max-width: 640px) {
+  .education-date {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+html.light-theme .education-date {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.education-status {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Responsive education status for mobile */
+@media (max-width: 640px) {
+  .education-status {
+    font-size: 12px;
+  }
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* Responsive skills grid for tablet and mobile */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    gap: 16px;
+  }
+}
+
+.skills-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive skills card padding for mobile */
+@media (max-width: 768px) {
+  .skills-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-card {
+    padding: 12px;
+  }
+}
+
+.skills-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.skills-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+html.light-theme .skills-card {
+  background: rgba(241, 245, 249, 0.5);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.skills-card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.skills-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+/* Responsive skills card title for mobile */
+@media (max-width: 768px) {
+  .skills-card-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-card-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
+
+.skills-group {
+  margin-bottom: 24px;
+}
+
+/* Responsive skills group margin for mobile */
+@media (max-width: 640px) {
+  .skills-group {
+    margin-bottom: 16px;
+  }
+}
+
+.skills-group-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Responsive skills group label for mobile */
+@media (max-width: 640px) {
+  .skills-group-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  border: 1px solid;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive skill tag for mobile */
+@media (max-width: 640px) {
+  .skill-tag {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+}
+
+.tag-cyan {
+  background: rgba(6, 182, 212, 0.2);
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.tag-blue {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.professional-skills {
+  list-style: none;
+}
+
+.professional-skills li {
+  color: var(--text-light);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* Responsive professional skills for mobile */
+@media (max-width: 768px) {
+  .professional-skills li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .professional-skills li {
+    font-size: 13px;
+    margin-bottom: 6px;
+    padding-left: 16px;
+  }
+}
+
+.professional-skills li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+}
+
+/* Languages */
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+/* Responsive languages grid for mobile */
+@media (max-width: 768px) {
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .languages-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.language-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive language card padding for mobile */
+@media (max-width: 768px) {
+  .language-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .language-card {
+    padding: 12px;
+  }
+}
+
+.language-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.language-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.language-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.language-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+html.light-theme .language-card {
+  background: rgba(241, 245, 249, 0.5);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.language-card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.language-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+/* Responsive language name for mobile */
+@media (max-width: 768px) {
+  .language-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .language-name {
+    font-size: 14px;
+  }
+}
+
+.language-level {
+  font-size: 13px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* Responsive language level for mobile */
+@media (max-width: 640px) {
+  .language-level {
+    font-size: 11px;
+  }
+}
+
+/* Interests */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+/* Responsive interests grid for tablet and mobile */
+@media (max-width: 768px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.interest-item {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive interest item padding for mobile */
+@media (max-width: 768px) {
+  .interest-item {
+    padding: 16px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .interest-item {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+.interest-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.interest-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.interest-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.interest-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+html.light-theme .interest-item {
+  background: rgba(241, 245, 249, 0.5);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.interest-item:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.interest-dot {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.interest-item span:last-child {
+  color: var(--text-light);
+}
+
+/* Responsive interest item text for mobile */
+@media (max-width: 640px) {
+  .interest-item span:last-child {
+    font-size: 13px;
+  }
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 48px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* Responsive footer padding for mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 32px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding-top: 24px;
+    margin-top: 40px;
+  }
+}
+
+.footer-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive footer title for mobile */
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-title {
+    font-size: 18px;
+  }
+}
+
+.footer-description {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive footer description for mobile */
+@media (max-width: 768px) {
+  .footer-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-description {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* Responsive button group for mobile */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .button-group {
+    gap: 10px;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive button for mobile */
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: white;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+}
+
+.btn-secondary:hover {
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.btn-linkedin {
+  background: linear-gradient(90deg, #0a66c2, #0a66c2);
+  color: white;
+  box-shadow: 0 0 20px rgba(10, 102, 194, 0.3);
+}
+
+.btn-linkedin:hover {
+  box-shadow: 0 0 30px rgba(10, 102, 194, 0.5);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Responsive footer bottom for mobile */
+@media (max-width: 640px) {
+  .footer-bottom {
+    padding-top: 16px;
+    font-size: 11px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+               <img src="WhatsApp Image 2024-09-20 à 12.24.27_a3b9837a.jpg" alt="Photo de profil" class="profile-photo" style="width:50px; height:50px; border-radius:50%; border: 2px solid var(--accent-cyan); object-fit: cover; box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);">
+                <h1 class="header-title"><i><b>👨‍💻Ismail Salmi</b></i></h1>
+                <div class="header-right">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content fade-in-up">
+                    <div class="profile-photo-container">
+                        <img src="WhatsApp Image 2025-04-27 à 21.06.37_962c63be.jpg" alt="Photo de profil" class="profile-photo">
+                    </div>
+                    
+                    <h2 class="hero-title"><i> Développeur Full Stack Junior | 👨‍💻Étudiant en Développement Informatique</i></h2>
+                    <p class="hero-description">
+                          <h3><p><i>👋 Bienvenue sur mon CV ! Je suis Ismail Salmi, Étudiant en 2ᵉ année de développement informatique, basé à Meknes, Maroc.</i></p></h3>
+                       <br>
+                          <h4> <p><i>🤝 Je suis ouvert aux collaborations professionnelles, aux opportunités de stage et aux échanges enrichissants avec des passionnés de technologie et des professionnels du domaine.</i></p></h4>
+                  <br> 
+                    <div class="badges">
+                        <span class="badge badge-cyan">Développement Full Stack</span>
+                        <span class="badge badge-blue">Gestion Commerciale</span>
+                        <span class="badge badge-purple">Marketing Digital</span>
+                    </div>
+                </div>
+
+                <div class="contact-card fade-in-up" style="animation-delay: 0.1s;">
+                    <h3 class="contact-card-title">Contact</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉</span>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:Salmismail.207@gmail.com" class="contact-link"><b>Salmismail.207@gmail.com</b></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <p class="contact-label">Téléphone</p>
+                            <a href="tel:+212614478969" class="contact-link"><b>+212 6 14 47 89 69</b></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <p class="contact-label">Adresse</p>
+                            <p class="contact-text"><b>6 Derb Larbi El Houari, Touarga, Meknes</b></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/ismail-salmi-734128330/" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin btn-small">
+                            <span>in</span> LinkedIn
+                        </a>
+                        <button id="downloadBtn" class="btn btn-secondary btn-small">
+                             <a href="CV-Ismail-Salmi.pdf.pdf" class="btn" download>📄 Télécharger CV</a>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+          
+            <!-- Education Section -->
+            <section id="education" class="section fade-in-up">
+                <div class="accordion-item">
+                    <button class="accordion-header" data-target="education-content">
+                        <span class="accordion-title">Formation</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="education-content" class="accordion-content">
+                        <div class="education-list">
+                            <div class="education-card">
+                                <div class="education-header">
+                                    <h3 class="education-title">Technicien Spécialisé en Développement Informatique</h3>
+                                    <span class="education-date">2024 - 2026</span>
+                                </div>
+                                <p class="education-status">En cours</p>
+                            </div>
+                            <div class="education-card">
+                                <div class="education-header">
+                                    <h3 class="education-title">Bachelor</h3>
+                                    <span class="education-date">2024</span>
+                                </div>
+                                <p class="education-status">Bac Science Physique Option Français</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Experience Section -->
+            <section id="experience" class="section fade-in-up">
+                <div class="accordion-item">
+                    <button class="accordion-header" data-target="experience-content">
+                        <span class="accordion-title">Expérience Professionnelle</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="experience-content" class="accordion-content">
+                        <div class="experience-list">
+                            <!-- Experience 1 -->
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div>
+                                        <h3 class="experience-title">Stage Informatique</h3>
+                                        <p class="experience-company">Smart Deals</p>
+                                    </div>
+                                    <span class="experience-date">06/2025 - 08/2025</span>
+                                </div>
+                                <ul class="experience-list-items">
+                                    <li>Participation à l'implémentation de nouveaux logiciels</li>
+                                    <li>Assistance lors des démonstrations client</li>
+                                    <li>Tests et validation de solutions logicielles</li>
+                                </ul>
+                            </div>
+
+                            <!-- Experience 2 -->
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div>
+                                        <h3 class="experience-title">Employé Jeux</h3>
+                                        <p class="experience-company">Montazah Laaila</p>
+                                    </div>
+                                    <span class="experience-date">06/2024 - 10/2024</span>
+                                </div>
+                                <ul class="experience-list-items">
+                                    <li>Encadrement des jeux et activités récréatives</li>
+                                    <li>Gestion des conflits et assistance aux clients</li>
+                                    <li>Maintien de l'ordre et de la propreté dans l'espace de travail</li>
+                                </ul>
+                            </div>
+
+                            <!-- Experience 3 -->
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div>
+                                        <h3 class="experience-title">Vendeur Magasin</h3>
+                                        <p class="experience-company">Salmi Optic</p>
+                                    </div>
+                                    <span class="experience-date">2023 - 2024</span>
+                                </div>
+                                <ul class="experience-list-items">
+                                    <li>Mise en place d'une stratégie de vente et marketing</li>
+                                    <li>Développement de la présence digitale de l'entreprise</li>
+                                    <li>Animation des réseaux sociaux pour augmenter la visibilité</li>
+                                </ul>
+                            </div>
+
+                            <!-- Experience 4 -->
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <div>
+                                        <h3 class="experience-title">Vendeur Magasin</h3>
+                                        <p class="experience-company">MEDshop</p>
+                                    </div>
+                                    <span class="experience-date">06/2022 - 09/2022</span>
+                                </div>
+                                <ul class="experience-list-items">
+                                    <li>Organisation et gestion des stocks et réapprovisionnement</li>
+                                    <li>Vente et conseil auprès des clients</li>
+                                    <li>Gestion des commandes en ligne et suivi des livraisons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills Section -->
+            <section id="skills" class="section fade-in-up">
+                <div class="accordion-item">
+                    <button class="accordion-header" data-target="skills-content">
+                        <span class="accordion-title">Compétences</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="skills-content" class="accordion-content">
+                        <div class="skills-grid">
+                            <!-- Technical Skills -->
+                            <div class="skills-card">
+                                <h3 class="skills-card-title">Compétences Techniques</h3>
+                                <div class="skills-group">
+                                    <p class="skills-group-label">Langages de Programmation</p>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag tag-cyan">HTML</span>
+                                        <span class="skill-tag tag-cyan">CSS</span>
+                                        <span class="skill-tag tag-cyan">JavaScript</span>
+                                        <span class="skill-tag tag-cyan">PHP</span>
+                                        <span class="skill-tag tag-cyan">Python</span>
+                                        <span class="skill-tag tag-cyan">SQL</span>
+                                        <span class="skill-tag tag-cyan">.Net</span>
+                                    </div>
+                                </div>
+                                <div class="skills-group">
+                                    <p class="skills-group-label">Frameworks & Outils</p>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag tag-blue">Bootstrap</span>
+                                        <span class="skill-tag tag-blue">jQuery</span>
+                                        <span class="skill-tag tag-blue">Laravel</span>
+                                        <span class="skill-tag tag-blue">React</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Professional Skills -->
+                            <div class="skills-card">
+                                <h3 class="skills-card-title">Compétences Professionnelles</h3>
+                                <ul class="professional-skills">
+                                    <li>Stratégie commerciale et gestion des ventes</li>
+                                    <li>Animation et gestion des réseaux sociaux</li>
+                                    <li>Adaptabilité et écoute active des clients</li>
+                                    <li>Gestion de projet et supervision d'équipe</li>
+                                    <li>Design graphique</li>
+                                    <li>Service client</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages" class="section fade-in-up">
+                <div class="accordion-item">
+                    <button class="accordion-header" data-target="languages-content">
+                        <span class="accordion-title">Langues</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="languages-content" class="accordion-content">
+                        <div class="languages-grid">
+                            <div class="language-card">
+                                <h3 class="language-name">Arabe</h3>
+                                <p class="language-level">Langue maternelle</p>
+                            </div>
+                            <div class="language-card">
+                                <h3 class="language-name">Français</h3>
+                                <p class="language-level">Courant</p>
+                            </div>
+                            <div class="language-card">
+                                <h3 class="language-name">Anglais</h3>
+                                <p class="language-level">Intermédiaire</p>
+                            </div>
+                            <div class="language-card">
+                                <h3 class="language-name">Allemand</h3>
+                                <p class="language-level">Débutant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests Section -->
+            <section id="interests" class="section fade-in-up">
+                <div class="accordion-item">
+                    <button class="accordion-header" data-target="interests-content">
+                        <span class="accordion-title">Centres d'Intérêt</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div id="interests-content" class="accordion-content">
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <span class="interest-dot"></span>
+                                <span>Voyage et découverte culturelle</span>
+                            </div>
+                            <div class="interest-item">
+                                <span class="interest-dot"></span>
+                                <span>Design graphique et technologie numérique</span>
+                            </div>
+                            <div class="interest-item">
+                                <span class="interest-dot"></span>
+                                <span>Engagement social et activités associatives</span>
+                            </div>
+                            <div class="interest-item">
+                                <span class="interest-dot"></span>
+                                <span>Sport et bien-être</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer / Contact Section -->
+            <footer id="contact" class="footer fade-in-up">
+             <h3> <p><b><i>🤝 Je suis ouvert aux collaborations professionnelles, aux opportunités de stage et aux échanges enrichissants avec des passionnés de technologie et des professionnels du domaine.</i></b></p></h3>
+                 <br>
+                <h2 class="footer-title">Restons en Contact</h2>
+                <p class="footer-description"><b><h4>📲 N'hésitez pas à me contacter si vous souhaitez discuter des collaborations potentielles, d'opportunités professionnelles ou simplement pour échanger des idées passionnantes sur les nouvelles technologies !</b></p></h4>
+
+                <div class="button-group">
+                    <a href="mailto:Salmismail.207@gmail.com" class="btn btn-primary">
+                        <span>✉</span> Envoyer un Email
+                    </a>
+                    <a href="tel:+212614478969" class="btn btn-secondary">
+                        <span>📱</span> Appeler
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 Ismail Salmi. Tous droits réservés.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle")
+const html = document.documentElement
+
+// Check for saved theme preference or default to dark theme
+const currentTheme = localStorage.getItem("theme") || "dark"
+if (currentTheme === "light") {
+  html.classList.add("light-theme")
+  themeToggle.textContent = "☀️"
+}
+
+themeToggle.addEventListener("click", () => {
+  html.classList.toggle("light-theme")
+  const theme = html.classList.contains("light-theme") ? "light" : "dark"
+  localStorage.setItem("theme", theme)
+  themeToggle.textContent = theme === "light" ? "☀️" : "🌙"
+})
+
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  const cvContent = `ISMAIL SALMI
+Développeur Informatique & Spécialiste Commercial
+
+═══════════════════════════════════════════════════════════════
+
+CONTACT
+Email: Salmismail.207@gmail.com
+Téléphone: +212 614 478 969
+Adresse: 6 Derb Larbi El Houari, Salé
+
+═══════════════════════════════════════════════════════════════
+
+À PROPOS
+Passionné par la vente et le commerce, je dispose d'une solide expérience en gestion de magasin et en service client. Mon parcours m'a permis de développer des compétences en animation des réseaux sociaux, en design graphique et en gestion de projet, garantissant une approche innovante pour améliorer l'expérience client et maximiser les ventes.
+
+═══════════════════════════════════════════════════════════════
+
+EXPÉRIENCE PROFESSIONNELLE
+
+Stage Informatique - Smart Deals (06/2025 - 08/2025)
+• Participation à l'implémentation de nouveaux logiciels
+• Assistance lors des démonstrations client
+• Tests et validation de solutions logicielles
+
+Employé Jeux - Montazah Laaila (06/2024 - 10/2024)
+• Encadrement des jeux et activités récréatives
+• Gestion des conflits et assistance aux clients
+• Maintien de l'ordre et de la propreté dans l'espace de travail
+
+Vendeur Magasin - Salmi Optic (2023 - 2024)
+• Mise en place d'une stratégie de vente et marketing
+• Développement de la présence digitale de l'entreprise
+• Animation des réseaux sociaux pour augmenter la visibilité
+
+Vendeur Magasin - MEDshop (06/2022 - 09/2022)
+• Organisation et gestion des stocks et réapprovisionnement
+• Vente et conseil auprès des clients
+• Gestion des commandes en ligne et suivi des livraisons
+
+═══════════════════════════════════════════════════════════════
+
+FORMATION
+
+Technicien Spécialisé en Développement Informatique (2024 - 2026)
+En cours
+
+Bachelor - Bac Science Physique Option Français (2024)
+
+═══════════════════════════════════════════════════════════════
+
+COMPÉTENCES TECHNIQUES
+
+Langages de Programmation:
+HTML, CSS, JavaScript, PHP, Python, SQL
+
+Frameworks & Outils:
+Bootstrap, jQuery, Laravel, React
+
+═══════════════════════════════════════════════════════════════
+
+COMPÉTENCES PROFESSIONNELLES
+
+• Stratégie commerciale et gestion des ventes
+• Animation et gestion des réseaux sociaux
+• Adaptabilité et écoute active des clients
+• Gestion de projet et supervision d'équipe
+• Design graphique
+• Service client
+
+═══════════════════════════════════════════════════════════════
+
+LANGUES
+
+Arabe: Langue maternelle
+Français: Courant
+Anglais: Intermédiaire
+Allemand: Débutant
+
+═══════════════════════════════════════════════════════════════
+
+CENTRES D'INTÉRÊT
+
+• Voyage et découverte culturelle
+• Design graphique et technologie numérique
+• Engagement social et activités associatives
+• Sport et bien-être
+
+═══════════════════════════════════════════════════════════════
+
+© 2025 Ismail Salmi. Tous droits réservés.`
+
+  const element = document.createElement("a")
+  element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(cvContent))
+  element.setAttribute("download", "CV_Ismail_Salmi.txt")
+  element.style.display = "none"
+  document.body.appendChild(element)
+  element.click()
+  document.body.removeChild(element)
+})
+
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", function () {
+    const targetId = this.getAttribute("data-target")
+    const content = document.getElementById(targetId)
+
+    if (!content) {
+      return
+    }
+
+    const isActive = this.classList.contains("active")
+
+    if (isActive) {
+      // Close accordion
+      this.classList.remove("active")
+      content.classList.remove("active")
+      content.style.maxHeight = "0px"
+    } else {
+      // Open accordion
+      this.classList.add("active")
+      content.classList.add("active")
+      content.style.maxHeight = content.scrollHeight + "px"
+
+      // Recalculate after content loads
+      setTimeout(() => {
+        if (content.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px"
+        }
+      }, 100)
+    }
+  })
+})
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".accordion-content.active").forEach((content) => {
+    content.style.maxHeight = content.scrollHeight + "px"
+  })
+})
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href")
+    if (href !== "#" && document.querySelector(href)) {
+      e.preventDefault()
+      document.querySelector(href).scrollIntoView({
+        behavior: "smooth",
+      })
+    }
+  })
+})
+
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header")
+  if (window.scrollY > 50) {
+    header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.3)"
+  } else {
+    header.style.boxShadow = "none"
+  }
+})
+
+
+    </script>
+</body>
+</html>
